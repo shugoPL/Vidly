@@ -1,0 +1,15 @@
+﻿@model Vidly.ViewModel.CustomersViewModel
+@using Vidly.Models
+@{
+    ViewBag.Title = "CustomersList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customers List</h2>
+
+<ul>
+    @foreach (var cst in Model.Customer)
+    {
+        <li> @Html.ActionLink(cst.Name, "details/" + cst.Id, "Customers") </li>
+    }
+</ul>
